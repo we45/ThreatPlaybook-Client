@@ -5,11 +5,11 @@ here = path.abspath(path.dirname(__file__))
 
 setup(
     name='ThreatPlaybook-Client',
-    version='3.1.3',
+    version='2.0.0py',
     packages=['playbook'],
     entry_points={
         'console_scripts': [
-            'playbook = playbook:main'
+            'playbook = playbook:cli'
         ]
     },
     url='https://we45.github.io/threatplaybook/',
@@ -17,7 +17,6 @@ setup(
     author='we45',
     author_email='info@we45.com',
     install_requires=[
-        'docopt',
         'requests',
         'huepy',
         'pickledb',

@@ -1,2 +1,6 @@
 
 playbook/.cred
+cases/*
+.vscode/*
+venv/*
+playbook/dist/*

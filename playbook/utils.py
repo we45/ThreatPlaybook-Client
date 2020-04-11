@@ -27,6 +27,11 @@ def validate_user_story_name_select(content):
 def validate_user_stories(content):
     return pyjq.first('.data.userStories', content)
 
+
+def validate_project_by_name(content):
+  return pyjq.first('.data.projectByName.name', content)
+
+
 def template_threat_model_mutation():
     mutation = """
     mutation {
@@ -90,15 +95,16 @@ def template_user_story_query(query_string_value):
         abuses {
           description
           shortName
-          models {
+          scenarios {
             cwe
             name
-            name
+            description
             severity
             tests {
               name
               testCase
               testType
+              tools
             }
           }
         }
@@ -118,7 +124,7 @@ def template_user_story_full():
         abuses {
           description
           shortName
-          models {
+          scenarios {
             cwe
             description
             mitigations
